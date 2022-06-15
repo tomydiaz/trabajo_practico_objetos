@@ -21,4 +21,28 @@ public class Paciente {
     public String get_id() {
         return this._id;
     }
+
+    public String getDNI() {
+        return this.DNI;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public String getDomicilio() {
+        return this.domicilio;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getSexo() {
+        return this.sexo;
+    }
+
+    public String getEdad() {
+        return this.edad;
+    }
 }
