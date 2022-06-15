@@ -29,7 +29,6 @@ public final class LaboratorioController {
         return listaPacientes;
     }
 
-
     public void cargarPaciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
         Paciente paciente = new Paciente(DNI, nombre, domicilio, email, sexo, edad);
         listaPacientes.add(paciente);
@@ -40,7 +39,7 @@ public final class LaboratorioController {
         }
     }
 
-    public Paciente borrarPaciente(String DNI) {
+    public void borrarPaciente(String DNI) {
         int index = -1;
         for (Paciente paciente: listaPacientes) {
             if (paciente.getDNI().equals(DNI)) {
@@ -49,9 +48,8 @@ public final class LaboratorioController {
         }
         if (index != -1) {
             listaPacientes.remove(index);
-            System.out.println("Paciente eliminado, cantidad de pacientes:" + listaPacientes.size());
+            System.out.println("Paciente eliminado, cantidad de pacientes: " + listaPacientes.size());
         }
-        return null;
     }
 
     public Paciente buscarPaciente(String DNI) {
@@ -71,7 +69,6 @@ public final class LaboratorioController {
     }
 
     public void modificarPaciente(String DNI, String name, String domicilio, String email, String sexo, String edad) {
-
         int index = -1;
         for (Paciente paciente: listaPacientes) {
             if (paciente.getDNI().equals(DNI)) {
@@ -79,7 +76,7 @@ public final class LaboratorioController {
             }
         }
         if (index != -1) {
-            System.out.println("asdasd");
+            System.out.println("Paciente modificado con éxito");
             listaPacientes.get(index).setNombre(name);
             listaPacientes.get(index).setDomicilio(domicilio);
             listaPacientes.get(index).setEmail(email);
