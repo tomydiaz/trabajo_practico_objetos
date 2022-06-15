@@ -8,7 +8,9 @@ public final class LaboratorioController {
     private static LaboratorioController instance;
     public String value;
     public ArrayList<Paciente> listaPacientes = new ArrayList<Paciente>();
-    public PacienteDAO dao; {
+    public PacienteDAO dao;
+
+    {
         try {
             dao = new PacienteDAO();
         } catch (Exception e) {
