@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 public class FrmInternalIngresarPaciente extends JInternalFrame{
     private JPanel pnlPrincipal;
     private JTextField nombreTextField;
-    private JTextField apellidoTextField;
     private JTextField dniTextField;
     private JTextField domicilioTextField;
     private JTextField emailTextField;
