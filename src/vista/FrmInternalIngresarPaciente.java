@@ -34,6 +34,7 @@ public class FrmInternalIngresarPaciente extends JInternalFrame{
                         "20",
                         dniTextField.getText(),
                         nombreTextField.getText(),
+                        apellidoTextField.getText(),
                         domicilioTextField.getText(),
                         emailTextField.getText(),
                         sexoTextField.getText(),
