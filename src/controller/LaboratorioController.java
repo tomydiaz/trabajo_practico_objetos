@@ -21,4 +21,13 @@ public final class LaboratorioController {
         System.out.println(listaPacientes.size());
         return null;
     }
+
+
+    public Paciente borrarPaciente(String DNI) {
+        for (Paciente paciente: listaPacientes) {
+            System.out.println(paciente.getDNI());
+        }
+        System.out.println(listaPacientes.size());
+        return null;
+    }
 }
