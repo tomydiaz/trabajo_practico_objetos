@@ -1,11 +1,10 @@
 package controller;
 
-import com.google.gson.Gson;
 import modelo.Paciente;
 import modelo.PacienteDAO;
-import utils.GenericDAO;
-
+import modelo.Peticion;
 import java.util.ArrayList;
+import java.util.Date;
 
 public final class LaboratorioController {
     private static LaboratorioController instance;
@@ -35,12 +34,15 @@ public final class LaboratorioController {
         }
     }
 
-
     public Paciente borrarPaciente(String DNI) {
         for (Paciente paciente: listaPacientes) {
             System.out.println(paciente.getDNI());
         }
         System.out.println(listaPacientes.size());
         return null;
+    }
+
+    public void cargarPeticion(String obraSocial, Date fechaCarga, String estado) {
+
     }
 }
