@@ -53,4 +53,7 @@ public class Paciente {
         return idPeticionesAsignadas;
     }
 
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
 }
