@@ -5,7 +5,6 @@ import java.awt.*;
 
 public class FrmPacientes extends JDialog {
     private JPanel pnlPrincipal;
-    private JTabbedPane tabbedPane1;
     private JDesktopPane desktopPaneIngresarPaciente;
     private JDesktopPane desktopPaneModificarPaciente;
     private JDesktopPane desktopPaneEliminarPaciente;

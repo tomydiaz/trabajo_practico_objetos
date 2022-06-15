@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="vista.FrmPacientes">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="vista.FrmPracticas">
   <grid id="27dc6" binding="pnlPrincipal" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="385" height="317"/>
+      <xy x="20" y="20" width="411" height="296"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <tabbedpane id="50bf5" default-binding="true">
+      <tabbedpane id="8996b">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="200" height="200"/>
@@ -17,32 +17,15 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="e02f6" layout-manager="CardLayout" hgap="0" vgap="0">
-            <constraints>
-              <tabbedpane title="Ingresar Paciente"/>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <grid id="1b90c" class="javax.swing.JDesktopPane" binding="desktopPaneIngresarPaciente" layout-manager="CardLayout" hgap="0" vgap="0">
-                <constraints>
-                  <card name="Card1"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children/>
-              </grid>
-            </children>
-          </grid>
-          <grid id="7ca6f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="d5082" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Modificar Paciente"/>
+              <tabbedpane title="Alta Nueva Práctica"/>
             </constraints>
             <properties/>
             <border type="none"/>
             <children>
-              <grid id="8317d" class="javax.swing.JDesktopPane" binding="desktopPaneModificarPaciente" layout-manager="CardLayout" hgap="0" vgap="0">
+              <grid id="2b80" class="javax.swing.JPanel" binding="desktopPaneAltaNuevaPractica" layout-manager="CardLayout" hgap="0" vgap="0">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -52,15 +35,33 @@
               </grid>
             </children>
           </grid>
-          <grid id="8539e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="c504a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Eliminar Paciente"/>
+              <tabbedpane title="Modificar Práctica"/>
             </constraints>
             <properties/>
             <border type="none"/>
             <children>
-              <grid id="155da" class="javax.swing.JDesktopPane" binding="desktopPaneEliminarPaciente" layout-manager="CardLayout" hgap="0" vgap="0">
+              <grid id="5422d" class="javax.swing.JDesktopPane" binding="desktopPaneModificarPractica" layout-manager="CardLayout" hgap="0" vgap="0">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children/>
+              </grid>
+            </children>
+          </grid>
+          <grid id="c3ba0" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Eliminar Práctica"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="74cd7" class="javax.swing.JDesktopPane" binding="desktopPaneEliminarPractica" layout-manager="CardLayout" hgap="0" vgap="0">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>

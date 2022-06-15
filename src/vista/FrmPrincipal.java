@@ -19,8 +19,7 @@ public class FrmPrincipal extends JFrame {
 
     private FrmPrincipal self;
 
-    public FrmPrincipal(String titulo)
-    {
+    public FrmPrincipal(String titulo) {
         super(titulo);
 
         try {
@@ -44,16 +43,40 @@ public class FrmPrincipal extends JFrame {
         this.asociarEventos();
 
         this.self = this;
+
+        {
+            pacientesButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent) {
+                    FrmPacientes frame = new FrmPacientes(self, "PACIENTES"); /////////////ACA QUEDE MIN 41.28
+                    frame.setVisible(true);
+                }
+            });
+        }
+        practicasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmPracticas frame = new FrmPracticas(self, "PRACTICAS");
+                frame.setVisible(true);
+            }
+        });
+        resultadosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmResultados frame = new FrmResultados(self, "RESULTADOS");
+                frame.setVisible(true);
+            }
+        });
+        peticionesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmPeticiones frame = new FrmPeticiones(self, "PETICIONES");
+                frame.setVisible(true);
+            }
+        });
     }
 
     private void asociarEventos() {
-        pacientesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                FrmPacientes frame = new FrmPacientes(self, "Pacientes"); /////////////ACA QUEDE MIN 41.28
-                frame.setVisible(true);
-                            }
-        });
     }
 
     public static void main(String[] args) {
