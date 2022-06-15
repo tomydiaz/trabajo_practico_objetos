@@ -1,7 +1,10 @@
 package modelo;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Practica {
-    private String _id;
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private final int _id;
     private String codigo;
     private String nombre;
     private int horasResultado;
@@ -9,6 +12,7 @@ public class Practica {
     private boolean usada;
 
     public Practica(String codigo, String nombre, int horasResultado, boolean habilitada, boolean usada) {
+        this._id = count.incrementAndGet();
         this.codigo = codigo;
         this.nombre = nombre;
         this.horasResultado = horasResultado;
@@ -16,7 +20,7 @@ public class Practica {
         this.usada = usada;
     }
 
-    public String get_id() {
+    public int get_id() {
         return _id;
     }
 

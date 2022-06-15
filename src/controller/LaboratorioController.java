@@ -28,8 +28,8 @@ public final class LaboratorioController {
     }
 
 
-    public void cargarPaciente(String _id, String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
-        Paciente paciente = new Paciente(_id, DNI, nombre, domicilio, email, sexo, edad);
+    public void cargarPaciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
+        Paciente paciente = new Paciente(DNI, nombre, domicilio, email, sexo, edad);
         listaPacientes.add(paciente);
         try {
             dao.save(paciente);
@@ -68,7 +68,7 @@ public final class LaboratorioController {
         }
     }
 
-    public void modificarPaciente(String DNI, String name, String apellido, String domicilio, String email, String sexo, String edad) {
+    public void modificarPaciente(String DNI, String name, String domicilio, String email, String sexo, String edad) {
 
         int index = -1;
         for (Paciente paciente: listaPacientes) {

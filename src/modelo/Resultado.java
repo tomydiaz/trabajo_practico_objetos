@@ -1,19 +1,22 @@
 package modelo;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Resultado {
-    private String _id;
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private final int _id;
     private Peticion peticion;
     private Practica practicaAsociada;
 //    private TipoValor valor;
 //    private TipoEstado estado;
 
-    public Resultado(String _id, Peticion peticion, Practica practicaAsociada) {
-        this._id = _id;
+    public Resultado(Peticion peticion, Practica practicaAsociada) {
+        this._id = count.incrementAndGet();
         this.peticion = peticion;
         this.practicaAsociada = practicaAsociada;
     }
 
-    public String get_id() {
+    public int get_id() {
         return _id;
     }
 

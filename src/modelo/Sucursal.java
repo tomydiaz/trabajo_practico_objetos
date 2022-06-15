@@ -1,17 +1,20 @@
 package modelo;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Sucursal {
-    private String _id;
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private final int _id;
     private String numero;
     private String direccion;
 
     public Sucursal(String _id, String numero, String direccion) {
-        this._id = _id;
+        this._id = count.incrementAndGet();
         this.numero = numero;
         this.direccion = direccion;
     }
 
-    public String get_id() {
+    public int get_id() {
         return _id;
     }
 

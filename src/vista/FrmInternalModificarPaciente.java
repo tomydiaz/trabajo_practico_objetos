@@ -54,7 +54,7 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    LaboratorioController.getInstance().modificarPaciente(txtDniPaciente.getText(), textNameModificar.getText(), textApellidoModificar.getText(), textDomicilioModificar.getText(), textEmailModificar.getText(), textSexoModificar.getText(), textEdadModificar.getText());
+                    LaboratorioController.getInstance().modificarPaciente(txtDniPaciente.getText(), textNameModificar.getText(), textDomicilioModificar.getText(), textEmailModificar.getText(), textSexoModificar.getText(), textEdadModificar.getText());
                 } catch (Exception except) {
                     textNameModificar.setText("");
                     textDomicilioModificar.setText("");

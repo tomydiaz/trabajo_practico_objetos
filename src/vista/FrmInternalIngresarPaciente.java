@@ -30,7 +30,6 @@ public class FrmInternalIngresarPaciente extends JInternalFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 LaboratorioController.getInstance().cargarPaciente(
-                        "20",
                         dniTextField.getText(),
                         nombreTextField.getText(),
                         domicilioTextField.getText(),
