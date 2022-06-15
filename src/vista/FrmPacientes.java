@@ -14,6 +14,7 @@ public class FrmPacientes extends JDialog {
         super(owner, titulo);
 
         this.setContentPane(pnlPrincipal);
+
         this.setSize(400, 400);
         //Esto no permite volver a la pantalla anterior hasta cerrar esta
         this.setModal(true);
