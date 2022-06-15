@@ -26,19 +26,12 @@ public final class LaboratorioController {
         }
         return instance;
     }
-<<<<<<< HEAD
 
     public ArrayList<Paciente> getPacientes() {
         return listaPacientes;
     }
 
 
-    public Paciente cargarPaciente(String _id, String DNI, String nombre, String apellido, String domicilio, String email, String sexo, String edad) {
-        Paciente paciente = new Paciente(_id, DNI, nombre, apellido, domicilio, email, sexo, edad);
-        listaPacientes.add(paciente);
-        System.out.println("Paciente creado, cantidad de pacientes:" + listaPacientes.size());
-        return null;
-=======
     public void cargarPaciente(String _id, String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
         Paciente paciente = new Paciente(_id, DNI, nombre, domicilio, email, sexo, edad);
         listaPacientes.add(paciente);
@@ -47,7 +40,6 @@ public final class LaboratorioController {
         } catch (Exception e) {
             e.printStackTrace();
         }
->>>>>>> f8e2306535a560fc58c8b9c941fd08cfc55e1f9d
     }
 
 
@@ -93,7 +85,6 @@ public final class LaboratorioController {
         if (index != -1) {
             System.out.println("asdasd");
             listaPacientes.get(index).setNombre(name);
-            listaPacientes.get(index).setApellido(apellido);
             listaPacientes.get(index).setDomicilio(domicilio);
             listaPacientes.get(index).setEmail(email);
             listaPacientes.get(index).setSexo(sexo);

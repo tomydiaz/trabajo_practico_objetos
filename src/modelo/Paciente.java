@@ -13,11 +13,10 @@ public class  Paciente {
     private String edad;
     private ArrayList<String> idPeticionesAsignadas;
 
-    public Paciente(String _id, String DNI, String nombre, String apellido, String domicilio, String email, String sexo, String edad) {
+    public Paciente(String _id, String DNI, String nombre, String apellido, String domicilio, String email, String sexo) {
         this._id = _id;
         this.DNI = DNI;
         this.nombre = nombre;
-        this.apellido = apellido;
         this.domicilio = domicilio;
         this.email = email;
         this.sexo = sexo;
@@ -34,10 +33,6 @@ public class  Paciente {
 
     public String getNombre() {
         return this.nombre;
-    }
-
-    public String getApellido() {
-        return this.apellido;
     }
 
     public String getDomicilio() {
@@ -62,10 +57,6 @@ public class  Paciente {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
     }
 
     public void setDomicilio(String domicilio) {
