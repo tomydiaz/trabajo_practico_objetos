@@ -1,5 +1,7 @@
 package vista;
 
+import controller.LaboratorioController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +20,7 @@ public class FrmInternalEliminarPaciente extends JInternalFrame {
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                LaboratorioController.getInstance().borrarPaciente(txtDniPaciente.getText());
                 JOptionPane.showMessageDialog(null, "El paciente a eliminar es: " + txtDniPaciente.getText() + "\n¿Es correcto?");
             }
         });
