@@ -1,10 +1,11 @@
 package vista;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class FrmInternalAltaNuevaPractica extends JInternalFrame{
     private JPanel pnlPrincipal;
+    private JTextField textField1;
+    private JButton ingresarButton;
 
     public FrmInternalAltaNuevaPractica(String titulo) {
         super(titulo);
