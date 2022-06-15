@@ -59,5 +59,6 @@ public class FrmPrincipal extends JFrame {
     public static void main(String[] args) {
         FrmPrincipal frame = new FrmPrincipal("GESTIÓN DE LABORATORIO");
         frame.setVisible(true);
+
     }
 }

@@ -9,7 +9,7 @@ public class Usuario {
     private String domicilio;
     private String DNI;
     private Date fechaNac;
-    private String rol;
+    private String rol;  //TipoRol enum hacerlo!
 
     public Usuario(String username, String email, String contraseña, String domicilio, String DNI, Date fechaNac, String rol) {
         this.username = username;
