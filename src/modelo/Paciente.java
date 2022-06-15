@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-public class Paciente {
+public class  Paciente {
     private String _id;
     private String DNI;
     private String nombre;
@@ -12,7 +12,8 @@ public class Paciente {
     private String edad;
     private ArrayList<String> idPeticionesAsignadas;
 
-    public Paciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
+    public Paciente(String _id, String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
+        this._id = _id;
         this.DNI = DNI;
         this.nombre = nombre;
         this.domicilio = domicilio;
@@ -51,9 +52,5 @@ public class Paciente {
 
     public ArrayList<String> getIdPeticionesAsignadas() {
         return idPeticionesAsignadas;
-    }
-
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
     }
 }

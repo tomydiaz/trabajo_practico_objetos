@@ -1,5 +1,6 @@
 package vista;
 
+import controller.LaboratorioController;
 import modelo.Paciente;
 
 import javax.swing.*;
@@ -29,8 +30,15 @@ public class FrmInternalIngresarPaciente extends JInternalFrame{
         cargarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Paciente pa = new Paciente("","","","","","");
-                pa.setDNI(dniTextField.getText());
+                LaboratorioController.getInstance().cargarPaciente(
+                        "20",
+                        dniTextField.getText(),
+                        nombreTextField.getText(),
+                        domicilioTextField.getText(),
+                        emailTextField.getText(),
+                        sexoTextField.getText(),
+                        edadTextField.getText()
+                );
                 JOptionPane.showMessageDialog(null, "La carga del paciente fue exitosa");
             }
         });
