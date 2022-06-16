@@ -1,10 +1,9 @@
 package modelo;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.UUID;
 
 public class Practica {
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private final int _id;
+    private final UUID _id;
     private String codigo;
     private String nombre;
     private int horasResultado;
@@ -12,7 +11,7 @@ public class Practica {
     private boolean usada;
 
     public Practica(String codigo, String nombre, int horasResultado, boolean habilitada, boolean usada) {
-        this._id = count.incrementAndGet();
+        this._id = UUID.randomUUID();
         this.codigo = codigo;
         this.nombre = nombre;
         this.horasResultado = horasResultado;
@@ -20,7 +19,7 @@ public class Practica {
         this.usada = usada;
     }
 
-    public int get_id() {
+    public UUID get_id() {
         return _id;
     }
 

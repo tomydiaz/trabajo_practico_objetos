@@ -1,11 +1,10 @@
 package modelo;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.UUID;
 
-public class  Paciente {
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private final int _id;
+public class Paciente {
+    private final UUID _id;
     private String DNI;
     private String nombre;
     private String domicilio;
@@ -15,7 +14,7 @@ public class  Paciente {
     private ArrayList<String> idPeticionesAsignadas;
 
     public Paciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
-        this._id = count.incrementAndGet();
+        this._id = UUID.randomUUID();
         this.DNI = DNI;
         this.nombre = nombre;
         this.domicilio = domicilio;
@@ -24,7 +23,7 @@ public class  Paciente {
         this.edad = edad;
     }
 
-    public int get_id() {
+    public UUID get_id() {
         return this._id;
     }
 

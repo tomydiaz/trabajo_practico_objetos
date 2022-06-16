@@ -1,22 +1,21 @@
 package modelo;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.UUID;
 
 public class Resultado {
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private final int _id;
+    private final UUID _id;
     private Peticion peticion;
     private Practica practicaAsociada;
 //    private TipoValor valor;
 //    private TipoEstado estado;
 
     public Resultado(Peticion peticion, Practica practicaAsociada) {
-        this._id = count.incrementAndGet();
+        this._id = UUID.randomUUID();
         this.peticion = peticion;
         this.practicaAsociada = practicaAsociada;
     }
 
-    public int get_id() {
+    public UUID get_id() {
         return _id;
     }
 

@@ -1,20 +1,19 @@
 package modelo;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.UUID;
 
 public class Sucursal {
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private final int _id;
+    private final UUID _id;
     private String numero;
     private String direccion;
 
     public Sucursal(String _id, String numero, String direccion) {
-        this._id = count.incrementAndGet();
+        this._id = UUID.randomUUID();
         this.numero = numero;
         this.direccion = direccion;
     }
 
-    public int get_id() {
+    public UUID get_id() {
         return _id;
     }
 

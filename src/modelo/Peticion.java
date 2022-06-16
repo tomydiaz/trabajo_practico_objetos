@@ -2,11 +2,10 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.UUID;
 
 public class Peticion {
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private final int _id;
+    private final UUID _id;
     private String obraSocial;
     private Date fechaCarga;
     private ArrayList<String> idPracticasAsociadas;
@@ -14,13 +13,13 @@ public class Peticion {
     private ArrayList<String> idResultadosAsignados;
 
     public Peticion(String obraSocial, Date fechaCarga, String estado) {
-        this._id = count.incrementAndGet();
+        this._id = UUID.randomUUID();
         this.obraSocial = obraSocial;
         this.fechaCarga = fechaCarga;
         this.estado = estado;
     }
 
-    public int get_id() {
+    public UUID get_id() {
         return _id;
     }
 
