@@ -74,7 +74,22 @@ public class FrmPrincipal extends JFrame {
                 frame.setVisible(true);
             }
         });
+        sucursalesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmSucursales frame = new FrmSucursales(self, "SUCURSALES");
+                frame.setVisible(true);
+            }
+        });
+        usuariosButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmUsuarios frame = new FrmUsuarios(self, "USUARIOS");
+                frame.setVisible(true);
+            }
+        });
     }
+
 
     private void asociarEventos() {
     }
