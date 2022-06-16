@@ -41,14 +41,31 @@ public final class LaboratorioController {
 
     public void borrarPaciente(String DNI) {
         int index = -1;
+        try {
+            listaPacientes = (ArrayList<Paciente>) dao.getAll(Paciente.class);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         for (Paciente paciente: listaPacientes) {
+            System.out.println(paciente.getDNI());
             if (paciente.getDNI().equals(DNI)) {
                 index = listaPacientes.indexOf(paciente);
+                String dniString = paciente.getDNI();
+                int dniInt = Integer.parseInt(dniString);
+                try {
+                    dao.delete(dniInt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
         if (index != -1) {
             listaPacientes.remove(index);
-            System.out.println("Paciente eliminado, cantidad de pacientes: " + listaPacientes.size());
+            try {
+                System.out.println("Paciente eliminado, cantidad de pacientes: " + dao.getAll(Paciente.class).size());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
