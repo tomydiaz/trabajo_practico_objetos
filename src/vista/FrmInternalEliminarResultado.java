@@ -4,7 +4,6 @@ import javax.swing.*;
 
 public class FrmInternalEliminarResultado extends JInternalFrame {
     private JPanel pnlPrincipal;
-    private JButton button1;
 
     public FrmInternalEliminarResultado(String titulo) {
         super(titulo);
