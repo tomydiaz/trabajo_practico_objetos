@@ -2,6 +2,7 @@ package controller;
 
 import modelo.Paciente;
 import modelo.PacienteDAO;
+
 import java.util.ArrayList;
 
 public final class LaboratorioController {
@@ -18,7 +19,7 @@ public final class LaboratorioController {
         }
     }
 
-    public static LaboratorioController getInstance() {
+        public static LaboratorioController getInstance() {
         if (instance == null) {
             instance = new LaboratorioController();
         }
