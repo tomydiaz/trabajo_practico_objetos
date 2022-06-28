@@ -62,6 +62,7 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
                     textSexoModificar.setText("");
                     textEdadModificar.setText("");
                 }
+                JOptionPane.showMessageDialog(null, "El paciente se modificó con éxito");
 
 
             }
