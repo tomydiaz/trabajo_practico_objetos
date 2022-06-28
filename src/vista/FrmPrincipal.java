@@ -48,7 +48,7 @@ public class FrmPrincipal extends JFrame {
             pacientesButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    FrmPacientes frame = new FrmPacientes(self, "PACIENTES"); /////////////ACA QUEDE MIN 41.28
+                    FrmPacientes frame = new FrmPacientes(self, "PACIENTES");
                     frame.setVisible(true);
                 }
             });

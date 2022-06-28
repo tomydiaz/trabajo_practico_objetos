@@ -2,7 +2,6 @@ package vista;
 
 import controller.LaboratorioController;
 import modelo.Paciente;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,7 +18,6 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
     private JTextField textEmailModificar;
     private JTextField textSexoModificar;
     private JTextField textEdadModificar;
-    private JTextField textApellidoModificar;
 
     public FrmInternalModificarPaciente(String titulo) {
         super(titulo);

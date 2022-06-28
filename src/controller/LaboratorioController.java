@@ -2,21 +2,25 @@ package controller;
 
 import modelo.Paciente;
 import modelo.PacienteDAO;
+import modelo.Practica;
+import modelo.PracticaDAO;
 import java.util.ArrayList;
 
 public final class LaboratorioController {
     private static LaboratorioController instance;
     public String value;
     public ArrayList<Paciente> listaPacientes = new ArrayList<Paciente>();
-    public PacienteDAO dao;
-
+    public ArrayList<Practica> listaPracticas = new ArrayList<Practica>();
+/*    public PacienteDAO daoPaciente;
+    public PracticaDAO daoPractica;
     {
         try {
-            dao = new PacienteDAO();
+            daoPaciente = new PacienteDAO();
+            daoPractica = new PracticaDAO();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public static LaboratorioController getInstance() {
         if (instance == null) {
@@ -32,37 +36,37 @@ public final class LaboratorioController {
     public void cargarPaciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
         Paciente paciente = new Paciente(DNI, nombre, domicilio, email, sexo, edad);
         listaPacientes.add(paciente);
-        try {
-            dao.save(paciente);
+/*        try {
+            daoPaciente.save(paciente);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void borrarPaciente(String DNI) {
         int index = -1;
-        try {
-            listaPacientes = (ArrayList<Paciente>) dao.getAll(Paciente.class);
+        /*try {
+            listaPacientes = (ArrayList<Paciente>) daoPaciente.getAll(Paciente.class);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }
+        }*/
         for (Paciente paciente: listaPacientes) {
-            System.out.println(paciente.getDNI());
+            //System.out.println(paciente.getDNI());
             if (paciente.getDNI().equals(DNI)) {
                 index = listaPacientes.indexOf(paciente);
-                String dniString = paciente.getDNI();
+                /*String dniString = paciente.getDNI();
                 int dniInt = Integer.parseInt(dniString);
                 try {
-                    dao.delete(dniInt);
+                    daoPaciente.delete(dniInt);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
-                }
+                }*/
             }
         }
         if (index != -1) {
             listaPacientes.remove(index);
             try {
-                System.out.println("Paciente eliminado, cantidad de pacientes: " + dao.getAll(Paciente.class).size());
+                System.out.println("Paciente eliminado, cantidad de pacientes: " + listaPacientes.size());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
