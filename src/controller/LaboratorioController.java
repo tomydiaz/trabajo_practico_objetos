@@ -2,6 +2,8 @@ package controller;
 
 import modelo.Paciente;
 import modelo.Practica;
+import utils.DAOcsv;
+
 import java.util.ArrayList;
 
 public final class LaboratorioController {
@@ -9,6 +11,7 @@ public final class LaboratorioController {
     public String value;
     public ArrayList<Paciente> listaPacientes = new ArrayList<Paciente>();
     public ArrayList<Practica> listaPracticas = new ArrayList<Practica>();
+    public DAOcsv daoPaciente;
 
         public static LaboratorioController getInstance() {
         if (instance == null) {
@@ -24,6 +27,11 @@ public final class LaboratorioController {
     public void cargarPaciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
         Paciente paciente = new Paciente(DNI, nombre, domicilio, email, sexo, edad);
         listaPacientes.add(paciente);
+        try {
+            DAOcsv.save(listaPacientes);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void borrarPaciente(String DNI) {
