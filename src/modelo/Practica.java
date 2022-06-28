@@ -6,11 +6,11 @@ public class Practica {
     private final UUID _id;
     private String codigo;
     private String nombre;
-    private int horasResultado;
+    private String horasResultado;
     private boolean habilitada;
     private boolean usada;
 
-    public Practica(String codigo, String nombre, int horasResultado, boolean habilitada, boolean usada) {
+    public Practica(String codigo, String nombre, String horasResultado, boolean habilitada, boolean usada) {
         this._id = UUID.randomUUID();
         this.codigo = codigo;
         this.nombre = nombre;
@@ -31,7 +31,7 @@ public class Practica {
         return nombre;
     }
 
-    public int getHorasResultado() {
+    public String getHorasResultado() {
         return horasResultado;
     }
 
@@ -43,9 +43,20 @@ public class Practica {
         return usada;
     }
 
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    };
+
+    public void setHorasResultado(String horasResultado) {
+        this.horasResultado = horasResultado;
+    };
+
     public void setHabilitada(boolean habilitada) {
         this.habilitada = habilitada;
     }
+
+
 
     public void setUsada(boolean usada) {
         this.usada = usada;

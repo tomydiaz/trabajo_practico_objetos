@@ -1,11 +1,14 @@
 package vista;
 
+import controller.LaboratorioController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class FrmInternalEliminarPractica extends JInternalFrame {
     private JPanel pnlPrincipal;
+    private JTextField textCodigoEliminar;
     private JButton eliminarButton;
 
     public FrmInternalEliminarPractica(String titulo) {
@@ -17,8 +20,8 @@ public class FrmInternalEliminarPractica extends JInternalFrame {
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "La Práctica fue eliminada");
-
+                LaboratorioController.getInstance().borrarPractica(textCodigoEliminar.getText());
+                JOptionPane.showMessageDialog(null, "La practica ha sido eliminada");
             }
         });
     }

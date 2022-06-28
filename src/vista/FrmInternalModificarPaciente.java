@@ -30,7 +30,6 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     Paciente paciente = LaboratorioController.getInstance().buscarPaciente(txtDniPaciente.getText());
-                    System.out.println(paciente.getDNI());
                     textNameModificar.setText(paciente.getNombre());
                     textDomicilioModificar.setText(paciente.getDomicilio());
                     textEmailModificar.setText(paciente.getEmail());
@@ -60,6 +59,7 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
                     textSexoModificar.setText("");
                     textEdadModificar.setText("");
                 }
+                JOptionPane.showMessageDialog(null, "La modificacion del paciente fue exitosa");
 
 
             }

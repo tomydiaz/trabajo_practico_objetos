@@ -1,5 +1,8 @@
 package vista;
 
+import controller.LaboratorioController;
+import modelo.Paciente;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,10 +23,10 @@ public class FrmInternalModificarPeticion extends JInternalFrame {
         this.setBorder(null);
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
 
-        cargarButton.addActionListener(new ActionListener() {
+        buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "La modificación fue exitosa");
+                
 
 
             }
