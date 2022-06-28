@@ -1,16 +1,20 @@
 package controller;
 
 import modelo.Paciente;
+import modelo.Peticion;
 import modelo.Practica;
 import utils.DAOcsv;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public final class LaboratorioController {
     private static LaboratorioController instance;
     public String value;
     public ArrayList<Paciente> listaPacientes = new ArrayList<Paciente>();
     public ArrayList<Practica> listaPracticas = new ArrayList<Practica>();
+    public ArrayList<Peticion> listaPeticiones = new ArrayList<Peticion>();
     public DAOcsv daoPaciente;
 
         public static LaboratorioController getInstance() {
@@ -124,6 +128,58 @@ public final class LaboratorioController {
         if (index != -1) {
             listaPracticas.get(index).setNombre(nombre);
             listaPracticas.get(index).setHorasResultado(horasResultado);
+        }
+    }
+
+
+    public Date getDate() {
+        return Calendar.getInstance().getTime();
+    }
+
+    public void cargarPeticion(String codigo, String obraSocial) {
+        Peticion peticion = new Peticion(codigo, obraSocial, getDate(), "Activa");
+        listaPeticiones.add(peticion);
+    }
+
+    public void borrarPeticion(String codigo) {
+        int index = -1;
+        for (Peticion peticion: listaPeticiones) {
+            if (peticion.getCodigo().equals(codigo)) {
+                index = listaPeticiones.indexOf(peticion);
+            }
+        }
+        if (index != -1) {
+            listaPeticiones.remove(index);
+            System.out.println("Peticion eliminada, cantidad de peticiones: " + listaPeticiones.size());
+        }
+    }
+
+    public Peticion buscarPeticion(String codigo) {
+        Peticion peticionABuscar;
+        int index = -1;
+        for (Peticion peticion : listaPeticiones) {
+            if (peticion.getCodigo().equals(codigo)) {
+                index = listaPeticiones.indexOf(peticion);
+            }
+        }
+        if (index != -1) {
+            peticionABuscar = listaPeticiones.get(index);
+            return peticionABuscar;
+        } else {
+            return null;
+        }
+    }
+
+    public void modificarPeticion(String codigo, String obraSocial, String estado) {
+        int index = -1;
+        for (Peticion peticion: listaPeticiones) {
+            if (peticion.getCodigo().equals(codigo)) {
+                index = listaPeticiones.indexOf(peticion);
+            }
+        }
+        if (index != -1) {
+            listaPeticiones.get(index).setObraSocial(obraSocial);
+            listaPeticiones.get(index).setEstado(estado);
         }
     }
 }

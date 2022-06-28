@@ -2,6 +2,8 @@ package vista;
 
 import controller.LaboratorioController;
 import modelo.Paciente;
+import modelo.Peticion;
+import modelo.Practica;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,7 +15,6 @@ public class FrmInternalModificarPeticion extends JInternalFrame {
     private JTextField textCodigoPeticionModificar;
     private JButton buscarButton;
     private JTextField textObraSocialModificar;
-    private JTextField textFechaDeCargaModificar;
     private JTextField textEstadoModificar;
     private JButton cargarButton;
 
@@ -26,9 +27,31 @@ public class FrmInternalModificarPeticion extends JInternalFrame {
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                try {
+                    Peticion peticion = LaboratorioController.getInstance().buscarPeticion(textCodigoPeticionModificar.getText());
+                    textObraSocialModificar.setText(peticion.getObraSocial());
+                    textEstadoModificar.setText(peticion.getEstado());
+                } catch (Exception except) {
+                    textObraSocialModificar.setText("");
+                    textEstadoModificar.setText("");
+                }
+            }
+        });
 
-
+        cargarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    LaboratorioController.getInstance().modificarPeticion(
+                            textCodigoPeticionModificar.getText(),
+                            textObraSocialModificar.getText(),
+                            textEstadoModificar.getText()
+                    );
+                } catch (Exception except) {
+                    textObraSocialModificar.setText("");
+                    textEstadoModificar.setText("");
+                }
+                JOptionPane.showMessageDialog(null, "La modificacion de la peticion fue exitosa");
             }
         });
     }

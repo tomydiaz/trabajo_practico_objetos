@@ -1,5 +1,7 @@
 package vista;
 
+import controller.LaboratorioController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,8 +9,9 @@ import java.awt.event.ActionListener;
 public class FrmInternalNuevaPeticion extends JInternalFrame {
 
     private JPanel pnlPrincipal;
-    private JTextField textObraSocialAlta;
+    private JTextField obraSocialTextField;
     private JButton cargarButton;
+    private JTextField codigoTextField;
 
     public FrmInternalNuevaPeticion(String titulo) {
         super(titulo);
@@ -19,7 +22,10 @@ public class FrmInternalNuevaPeticion extends JInternalFrame {
         cargarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                LaboratorioController.getInstance().cargarPeticion(
+                        codigoTextField.getText(),
+                        obraSocialTextField.getText()
+                );
                 JOptionPane.showMessageDialog(null, "La carga de la petición fue exitosa");
 
             }

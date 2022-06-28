@@ -10,7 +10,6 @@ public class FrmInternalAltaNuevaPractica extends JInternalFrame{
     private JPanel pnlPrincipal;
     private JButton ingresarButton;
     private JTextField codigoTextField;
-
     private JTextField horasTextField;
     private JTextField nombreTextField;
 

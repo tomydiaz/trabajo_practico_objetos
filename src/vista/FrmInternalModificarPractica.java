@@ -33,8 +33,6 @@ public class FrmInternalModificarPractica extends JInternalFrame{
                     textNombreModificar.setText("");
                     textHorasResultadoModificar.setText("");
                 }
-
-
             }
         });
 
@@ -48,8 +46,6 @@ public class FrmInternalModificarPractica extends JInternalFrame{
                     textHorasResultadoModificar.setText("");
                 }
                 JOptionPane.showMessageDialog(null, "La modificacion de la practica fue exitosa");
-
-
             }
         });
     }

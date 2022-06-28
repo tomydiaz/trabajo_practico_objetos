@@ -1,5 +1,7 @@
 package vista;
 
+import controller.LaboratorioController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +9,7 @@ import java.awt.event.ActionListener;
 public class FrmInternalEliminarPeticion extends JInternalFrame {
 
     private JPanel pnlPrincipal;
-    private JTextField textField1;
+    private JTextField codigoTextField;
     private JButton eliminarButton;
 
     public FrmInternalEliminarPeticion(String titulo) {
@@ -19,8 +21,8 @@ public class FrmInternalEliminarPeticion extends JInternalFrame {
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                LaboratorioController.getInstance().borrarPeticion(codigoTextField.getText());
                 JOptionPane.showMessageDialog(null, "Petición Eliminada");
-
             }
         });
     }
