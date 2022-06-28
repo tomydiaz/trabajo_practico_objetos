@@ -2,6 +2,7 @@ package vista;
 
 import controller.LaboratorioController;
 import modelo.Paciente;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +19,7 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
     private JTextField textEmailModificar;
     private JTextField textSexoModificar;
     private JTextField textEdadModificar;
+    private JTextField textApellidoModificar;
 
     public FrmInternalModificarPaciente(String titulo) {
         super(titulo);
@@ -30,6 +32,7 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     Paciente paciente = LaboratorioController.getInstance().buscarPaciente(txtDniPaciente.getText());
+                    System.out.println(paciente.getDNI());
                     textNameModificar.setText(paciente.getNombre());
                     textDomicilioModificar.setText(paciente.getDomicilio());
                     textEmailModificar.setText(paciente.getEmail());
@@ -59,7 +62,7 @@ public class FrmInternalModificarPaciente extends JInternalFrame{
                     textSexoModificar.setText("");
                     textEdadModificar.setText("");
                 }
-                JOptionPane.showMessageDialog(null, "La modificacion del paciente fue exitosa");
+                JOptionPane.showMessageDialog(null, "El paciente se modificó con exito");
 
 
             }
