@@ -22,7 +22,7 @@ public final class LaboratorioController {
         }
     }*/
 
-    public static LaboratorioController getInstance() {
+        public static LaboratorioController getInstance() {
         if (instance == null) {
             instance = new LaboratorioController();
         }
