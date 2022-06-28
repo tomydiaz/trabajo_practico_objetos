@@ -1,7 +1,6 @@
 package vista;
 
 import controller.LaboratorioController;
-import modelo.Paciente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -42,4 +41,3 @@ public class FrmInternalIngresarPaciente extends JInternalFrame{
         });
     }
 }
-

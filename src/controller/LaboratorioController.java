@@ -1,23 +1,14 @@
 package controller;
 
 import modelo.Paciente;
-import modelo.PacienteDAO;
-
+import modelo.Practica;
 import java.util.ArrayList;
 
 public final class LaboratorioController {
     private static LaboratorioController instance;
     public String value;
     public ArrayList<Paciente> listaPacientes = new ArrayList<Paciente>();
-    public PacienteDAO dao;
-
-    {
-        try {
-            dao = new PacienteDAO();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    public ArrayList<Practica> listaPracticas = new ArrayList<Practica>();
 
         public static LaboratorioController getInstance() {
         if (instance == null) {
@@ -33,40 +24,18 @@ public final class LaboratorioController {
     public void cargarPaciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
         Paciente paciente = new Paciente(DNI, nombre, domicilio, email, sexo, edad);
         listaPacientes.add(paciente);
-        try {
-            dao.save(paciente);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public void borrarPaciente(String DNI) {
         int index = -1;
-        try {
-            listaPacientes = (ArrayList<Paciente>) dao.getAll(Paciente.class);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
         for (Paciente paciente: listaPacientes) {
-            System.out.println(paciente.getDNI());
             if (paciente.getDNI().equals(DNI)) {
                 index = listaPacientes.indexOf(paciente);
-                String dniString = paciente.getDNI();
-                int dniInt = Integer.parseInt(dniString);
-                try {
-                    dao.delete(dniInt);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
             }
         }
         if (index != -1) {
             listaPacientes.remove(index);
-            try {
-                System.out.println("Paciente eliminado, cantidad de pacientes: " + dao.getAll(Paciente.class).size());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+                System.out.println("Paciente eliminado, cantidad de pacientes: " + listaPacientes.size());
         }
     }
 
@@ -94,12 +63,59 @@ public final class LaboratorioController {
             }
         }
         if (index != -1) {
-            System.out.println("Paciente modificado con éxito");
             listaPacientes.get(index).setNombre(name);
             listaPacientes.get(index).setDomicilio(domicilio);
             listaPacientes.get(index).setEmail(email);
             listaPacientes.get(index).setSexo(sexo);
             listaPacientes.get(index).setEdad(edad);
+        }
+    }
+
+
+    public void cargarPractica(String codigo, String nombre, String horasResultado) {
+        Practica practica = new Practica(codigo,nombre,horasResultado, true, false );
+        listaPracticas.add(practica);
+    }
+
+    public void borrarPractica(String codigo) {
+        int index = -1;
+        for (Practica practica: listaPracticas) {
+            if (practica.getCodigo().equals(codigo)) {
+                index = listaPracticas.indexOf(practica);
+            }
+        }
+        if (index != -1) {
+            listaPracticas.remove(index);
+            System.out.println("Practica eliminada, cantidad de practicas: " + listaPracticas.size());
+        }
+    }
+
+    public Practica buscarPractica(String codigo) {
+        Practica practicaABuscar;
+        int index = -1;
+        for (Practica practica: listaPracticas) {
+            if (practica.getCodigo().equals(codigo)) {
+                index = listaPracticas.indexOf(practica);
+            }
+        }
+        if (index != -1) {
+            practicaABuscar = listaPracticas.get(index);
+            return practicaABuscar;
+        } else {
+            return null;
+        }
+    }
+
+    public void modificarPractica(String codigo, String nombre, String horasResultado) {
+        int index = -1;
+        for (Practica practica: listaPracticas) {
+            if (practica.getCodigo().equals(codigo)) {
+                index = listaPracticas.indexOf(practica);
+            }
+        }
+        if (index != -1) {
+            listaPracticas.get(index).setNombre(nombre);
+            listaPracticas.get(index).setHorasResultado(horasResultado);
         }
     }
 }
