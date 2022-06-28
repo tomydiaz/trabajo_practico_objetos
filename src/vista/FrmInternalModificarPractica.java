@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class FrmInternalModificarPractica extends JInternalFrame{
     private JPanel pnlPrincipal;
-    private JTextField textField1;
     private JButton buscarButton;
     private JTextField textCodigoModificar;
     private JTextField textNombreModificar;

@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class FrmInternalEliminarPractica extends JInternalFrame {
     private JPanel pnlPrincipal;
-    private JTextField textField1;
     private JButton eliminarButton;
 
     public FrmInternalEliminarPractica(String titulo) {
