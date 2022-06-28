@@ -21,7 +21,7 @@ public class FrmInternalEliminarPaciente extends JInternalFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LaboratorioController.getInstance().borrarPaciente(txtDniPaciente.getText());
-                JOptionPane.showMessageDialog(null, "El paciente con DNI " + txtDniPaciente.getText() + "\nha sido eliminado");
+                JOptionPane.showMessageDialog(null, "El paciente ha sido eliminado");
             }
         });
     }
