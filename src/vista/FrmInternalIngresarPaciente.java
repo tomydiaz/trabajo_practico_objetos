@@ -1,7 +1,6 @@
 package vista;
 
 import controller.LaboratorioController;
-import modelo.Paciente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,7 +29,6 @@ public class FrmInternalIngresarPaciente extends JInternalFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 LaboratorioController.getInstance().cargarPaciente(
-                        "20",
                         dniTextField.getText(),
                         nombreTextField.getText(),
                         domicilioTextField.getText(),
@@ -43,4 +41,3 @@ public class FrmInternalIngresarPaciente extends JInternalFrame{
         });
     }
 }
-

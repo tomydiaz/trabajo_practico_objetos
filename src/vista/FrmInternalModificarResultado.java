@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class FrmInternalModificarResultado extends JInternalFrame {
     private JPanel pnlPrincipal;
-    private JButton button1;
+    private JButton verResultadosButton;
 
     public FrmInternalModificarResultado(String titulo) {
         super(titulo);

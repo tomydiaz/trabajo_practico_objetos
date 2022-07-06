@@ -1,10 +1,13 @@
 package vista;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FrmInternalEliminarResultado extends JInternalFrame {
     private JPanel pnlPrincipal;
-    private JButton button1;
+    private JTextField textField1;
+    private JButton eliminarButton;
 
     public FrmInternalEliminarResultado(String titulo) {
         super(titulo);
@@ -12,5 +15,12 @@ public class FrmInternalEliminarResultado extends JInternalFrame {
         this.setBorder(null);
         ((javax.swing.plaf.basic.BasicInternalFrameUI)this.getUI()).setNorthPane(null);
 
+        eliminarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "El resultado fue eliminada");
+
+            }
+        });
     }
 }

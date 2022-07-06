@@ -1,19 +1,21 @@
 package modelo;
 
+import java.util.UUID;
+
 public class Resultado {
-    private String _id;
+    private final UUID _id;
     private Peticion peticion;
     private Practica practicaAsociada;
 //    private TipoValor valor;
 //    private TipoEstado estado;
 
-    public Resultado(String _id, Peticion peticion, Practica practicaAsociada) {
-        this._id = _id;
+    public Resultado(Peticion peticion, Practica practicaAsociada) {
+        this._id = UUID.randomUUID();
         this.peticion = peticion;
         this.practicaAsociada = practicaAsociada;
     }
 
-    public String get_id() {
+    public UUID get_id() {
         return _id;
     }
 

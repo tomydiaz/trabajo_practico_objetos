@@ -1,20 +1,20 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
-public class  Paciente {
-    private String _id;
+public class Paciente {
+    private final UUID _id;
     private String DNI;
     private String nombre;
-    private String apellido;
     private String domicilio;
     private String email;
     private String sexo;
     private String edad;
     private ArrayList<String> idPeticionesAsignadas;
 
-    public Paciente(String _id, String DNI, String nombre, String apellido, String domicilio, String email, String sexo) {
-        this._id = _id;
+    public Paciente(String DNI, String nombre, String domicilio, String email, String sexo, String edad) {
+        this._id = UUID.randomUUID();
         this.DNI = DNI;
         this.nombre = nombre;
         this.domicilio = domicilio;
@@ -23,7 +23,7 @@ public class  Paciente {
         this.edad = edad;
     }
 
-    public String get_id() {
+    public UUID get_id() {
         return this._id;
     }
 
@@ -74,6 +74,4 @@ public class  Paciente {
     public void setEdad(String edad) {
         this.edad = edad;
     }
-
-
 }
